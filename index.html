@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, viewport-fit=cover">
+	<meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#1E1E1E" media="(prefers-color-scheme: dark)">
+  <title>Tabs</title>
+  <link rel="stylesheet" href="./style.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <section class="tabs-block">
+    <div class="container">
+      <div class="tabs-block__wrap">
+        <div class="tabs-block__title-block">
+          <div class="tabs-block__title active">
+            <span>Praising</span>
+          </div>
+          <div class="tabs-block__title">
+            <span>Work Emotion CR-Kai</span>
+          </div>
+          <div class="tabs-block__title">
+            <span>New SR Special</span>
+          </div>
+          <div class="tabs-block__title">
+            <span>Кноксхульт</span>
+          </div>
+          <div class="tabs-block__title-bg"> </div>
+        </div>
+        <div class="tabs-block__windows-block">
+          <div class="tabs-block__window active">
+            <div class="tabs-block__window-inner">
+              Idea of denouncing pleasure and praising pain was born and I will give you a complete
+            </div>
+          </div>
+          <div class="tabs-block__window hide">
+            <div class="tabs-block__window-inner">
+              В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя
+            </div>
+          </div>
+          <div class="tabs-block__window hide">
+            <div class="tabs-block__window-inner">
+              Является стандартной "рыбой" для текстов на латинице с начала и форм шрифтов, используя
+            </div>
+          </div>
+          <div class="tabs-block__window hide">
+            <div class="tabs-block__window-inner">
+              Коллекцию размеров и форм шрифтов, используя
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    {
+      $('.tabs-block__wrap').each(function () {
+        var $tabs = $(this).find('.tabs-block__title'),
+          $text = $(this).find('.tabs-block__window');
+        $tabs.off('click.tabs').on('click.tabs', function () {
+          var $this = $(this),
+            index = $tabs.index($this);
+          $tabs.not($this.addClass('active')).removeClass('active');
+          $text.not($text.eq(index).fadeIn(300).addClass('active')).hide().removeClass('active');
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
